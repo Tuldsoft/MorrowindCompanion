@@ -1,0 +1,28 @@
+Name,DisplayName,Specialization,Attribute
+Acrobatics,Acrobatics,Stealth,Strength
+Alchemy,Alchemy,Magic,Intelligence
+Alteration,Alteration,Magic,Willpower
+Armorer,Armorer,Combat,Strength
+Athletics,Athletics,Combat,Speed
+Axe,Axe,Combat,Strength
+Block,Block,Combat,Agility
+BluntWeapon,Blunt Weapon,Combat,Strength
+Conjuration,Conjuration,Magic,Intelligence
+Destruction,Destruction,Magic,Willpower
+Enchant,Enchant,Magic,Intelligence
+HandToHand,Hand-to-hand,Stealth,Speed
+HeavyArmor,Heavy Armor,Combat,Endurance
+Illusion,Illusion,Magic,Personality
+LightArmor,Light Armor,Stealth,Agility
+LongBlade,Long Blade,Combat,Strength
+Marksman,Marksman,Stealth,Agility
+MediumArmor,Medium Armor,Combat,Endurance
+Mercantile,Mercantile,Stealth,Personality
+Mysticism,Mysticism,Magic,Willpower
+Restoration,Restoration,Magic,Willpower
+Security,Security,Stealth,Intelligence
+ShortBlade,Short Blade,Stealth,Speed
+Sneak,Sneak,Stealth,Agility
+Spear,Spear,Combat,Endurance
+Speechcraft,Speechcraft,Stealth,Personality
+Unarmored,Unarmored,Magic,Speed

@@ -1,0 +1,1852 @@
+{
+    "Items": [
+        {
+            "fFile": 1,
+            "qualifier": 2,
+            "name": "Immune to Poison",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Poison",
+                        "school": 6,
+                        "description": "Increases the target's resistance to Poison. The magnitude is the percentage of reduction in damage caused by poison effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 2,
+            "name": "Resist Disease",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Common Disease",
+                        "school": 6,
+                        "description": "Increases the subject's resistance to Common Diseases. The magnitude is the percentage of reduction in damage caused by common disease effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 4,
+            "name": "Dragon Skin",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Shield",
+                        "school": 1,
+                        "description": "Creates a magical shield around the subject's entire body. The spell adds its magnitude to the subject's Armor Rating.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 4,
+            "name": "Resist Magicka",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Magicka",
+                        "school": 6,
+                        "description": "Increases the target's resistance to damage from magicka attacks not based on elemental forces. The magnitude is the percentage of reduction in damage caused by non-elemental magic attacks.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 4,
+            "name": "Magicka Bonus",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 5,
+                    "maxMag": 5,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Maximum Magicka",
+                        "school": 6,
+                        "description": "Modifies the multiplier used to derive the amount of magicka the subject currently retains. The magnitude is multiplied by the subject's Intelligence to derive the magicka",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 3,
+            "name": "Beast Tongue",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 5,
+                    "maxMag": 5,
+                    "duration": 600,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Command Creature",
+                        "school": 2,
+                        "description": "Compels a creature to fight the caster's enemies for the duration of the spell. The magnitude is the level of the creature affected. When the effect ends, the creature returns to its normal behavior.",
+                        "baseCost": 15.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 3,
+            "name": "Resist Disease",
+            "fType": 0,
+            "cost": 55,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Common Disease",
+                        "school": 6,
+                        "description": "Increases the subject's resistance to Common Diseases. The magnitude is the percentage of reduction in damage caused by common disease effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Resist Disease",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Common Disease",
+                        "school": 6,
+                        "description": "Increases the subject's resistance to Common Diseases. The magnitude is the percentage of reduction in damage caused by common disease effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Weakness to Shock",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Shock",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to Shock Damage.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Weakness to Frost",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Frost",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to Frost Damage.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Weakness to Fire",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Fire",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to Fire Damage.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Weakness to Magicka",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Magicka",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to damage from non-elemental magic attacks.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 1,
+            "name": "Magicka Bonus",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 15,
+                    "maxMag": 15,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Maximum Magicka",
+                        "school": 6,
+                        "description": "Modifies the multiplier used to derive the amount of magicka the subject currently retains. The magnitude is multiplied by the subject's Intelligence to derive the magicka",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 5,
+            "name": "Ancestor Guardian",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Sanctuary",
+                        "school": 4,
+                        "description": "Causes the target to be harder to hit. The magnitude is the value that is added to the target's chance to dodge attacks.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 5,
+            "name": "Resist Fire",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Fire",
+                        "school": 6,
+                        "description": "Increases the target's resistance to Fire Damage. The magnitude is the percentage of reduction in damage caused by elemental fire damage effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 6,
+            "name": "Star of the West",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Absorb Fatigue",
+                        "school": 5,
+                        "description": "Permanently transfers Fatigue from the victim to the caster, wearying the victim and invigorating the caster. The caster may not exceed their own natural maximum Fatigue value, but even if the caster is at full Fatigue, casting this spell will still drain the target's Fatigue.",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 6,
+            "name": "Voice of the Emperor",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 50,
+                    "duration": 15,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Charm",
+                        "school": 4,
+                        "description": "Temporarily increases the target's disposition towards the caster. When the effect ends, the target's disposition returns to its original value.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 7,
+            "name": "Eye of Fear",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Demoralize Humanoid",
+                        "school": 4,
+                        "description": "Temporarily increases a humanoid's flee rating (its inclination to flee from an attacker). The effect's magnitude is the value of the increase of the flee rating. When the effect ends, the humanoid's flee rating returns to normal. Creatures, undead, Daedra, and artifacts are not affected by this spell.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 8,
+            "name": "Thunder Fist",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 1,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Frost Damage",
+                        "school": 3,
+                        "description": "Produces a manifestation of elemental frost. Upon contact with an object, this manifestation causes frost damage over the area of the spell.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 8,
+            "name": "Woad",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 30,
+                    "maxMag": 30,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Shield",
+                        "school": 1,
+                        "description": "Creates a magical shield around the subject's entire body. The spell adds its magnitude to the subject's Armor Rating.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 8,
+            "name": "Resist Shock",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Shock",
+                        "school": 6,
+                        "description": "Increases the target's resistance to Shock Damage. The magnitude is the percentage of reduction in damage caused by elemental shock damage effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 8,
+            "name": "Immune to Frost",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Frost",
+                        "school": 6,
+                        "description": "Increases the target's resistance to Frost Damage. The magnitude is the percentage of reduction in damage caused by elemental frost damage effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 9,
+            "name": "Berserk",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 20,
+                    "maxMag": 20,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Health",
+                        "school": 6,
+                        "description": "Temporarily increases the value of a subject's Health. Health returns to its original values when the spell ends. The magnitude is the value of the increase in health.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Fatigue",
+                        "school": 6,
+                        "description": "Temporarily increases the value of a subject's Fatigue. Fatigue returns to its original values when the spell ends. The magnitude is the value of the increase in fatigue.",
+                        "baseCost": 0.5,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Attack",
+                        "school": 6,
+                        "description": "Raises the subject's chance of making a successful hit with a weapon or hand-to-hand attack.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 4,
+                    "spellEffectData": {
+                        "name": "Drain Attribute",
+                        "school": 3,
+                        "description": "Temporarily lowers the value of one of a victim's base Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the units of attribute reduced each second of the spell's duration.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 10,
+            "name": "Adrenaline Rush",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 4,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                },
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 6,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                },
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 5,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                },
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 1,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                },
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Health",
+                        "school": 6,
+                        "description": "Temporarily increases the value of a subject's Health. Health returns to its original values when the spell ends. The magnitude is the value of the increase in health.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 10,
+            "name": "Resist Poison",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Poison",
+                        "school": 6,
+                        "description": "Increases the target's resistance to Poison. The magnitude is the percentage of reduction in damage caused by poison effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 10,
+            "name": "Resist Disease",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 75,
+                    "maxMag": 75,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Common Disease",
+                        "school": 6,
+                        "description": "Increases the subject's resistance to Common Diseases. The magnitude is the percentage of reduction in damage caused by common disease effects.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 1,
+            "name": "Warwyrd",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 10,
+                    "maxMag": 10,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Attack",
+                        "school": 6,
+                        "description": "Raises the subject's chance of making a successful hit with a weapon or hand-to-hand attack.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 2,
+            "name": "Fay",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 5,
+                    "maxMag": 5,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Maximum Magicka",
+                        "school": 6,
+                        "description": "Modifies the multiplier used to derive the amount of magicka the subject currently retains. The magnitude is multiplied by the subject's Intelligence to derive the magicka",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 3,
+            "name": "Akaviri Danger-sense",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 10,
+                    "maxMag": 10,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Sanctuary",
+                        "school": 4,
+                        "description": "Causes the target to be harder to hit. The magnitude is the value that is added to the target's chance to dodge attacks.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 4,
+            "name": "Star Curse",
+            "fType": 2,
+            "cost": 5,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 3,
+                    "maxMag": 3,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 1,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Poison",
+                        "school": 3,
+                        "description": "Creates a spray of poisonous acid that causes damage to the health of the victim. A victim continues to lose health from the poison effect for the duration of the spell, unless the effect is canceled by a cure poison spell or potion.",
+                        "baseCost": 9.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 1,
+                    "maxMag": 1,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Damage Health",
+                        "school": 3,
+                        "description": "Lowers the value of a victim's Health. Health does not return to its original value at the end of the spell's duration; it restores normally, or may be restored with a restore health spell or potion. The magnitude is the units of health lost each second of the spell's duration.",
+                        "baseCost": 8.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 2,
+            "name": "Water Breathing",
+            "fType": 2,
+            "cost": 5,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 120,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Water Breathing",
+                        "school": 1,
+                        "description": "Permits the subject to breathe underwater for the duration of the spell.",
+                        "baseCost": 3.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 7,
+            "name": "Eye of Night",
+            "fType": 2,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Night Eye",
+                        "school": 4,
+                        "description": "Temporarily endows the subject with the ability to see in the dark. The effect's magnitude is the degree to which the ambient light level is raised.",
+                        "baseCost": 0.20000000298023225,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 5,
+            "name": "Lady's Favor",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 7,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 5,
+            "name": "Lady's Grace",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 6,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 6,
+            "name": "Charioteer",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 5,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 7,
+            "name": "Blood of the North",
+            "fType": 2,
+            "cost": 15,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 2,
+                    "maxMag": 2,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Restore Health",
+                        "school": 6,
+                        "description": "Restores the subject's Health if it has been affected by magical or normal attack. The magnitude is the units of health restored for each second of the spell's duration.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 7,
+            "name": "Trollkin",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Fire",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to Fire Damage.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 8,
+            "name": "Elfborn",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 15,
+                    "maxMag": 15,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Maximum Magicka",
+                        "school": 6,
+                        "description": "Modifies the multiplier used to derive the amount of magicka the subject currently retains. The magnitude is multiplied by the subject's Intelligence to derive the magicka",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Weakness to Magicka",
+                        "school": 3,
+                        "description": "Decreases the target's resistance to damage from non-elemental magic attacks.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 9,
+            "name": "Wombborn",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Spell Absorption",
+                        "school": 5,
+                        "description": "Allows the caster to absorb an attacking spell's power as an increase to their reservoir of magicka. The magnitude is the chance that an attacking spell will be absorbed. If successful, the caster absorbs the attacking spell's cost in spell points as increased magicka. The caster's magicka cannot be increased above the caster's standard magicka level. If failed, the attacking spell takes effect normally.",
+                        "baseCost": 10.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 20,
+                    "maxMag": 20,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fortify Maximum Magicka",
+                        "school": 6,
+                        "description": "Modifies the multiplier used to derive the amount of magicka the subject currently retains. The magnitude is multiplied by the subject's Intelligence to derive the magicka",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Stunted Magicka",
+                        "school": 3,
+                        "description": "Prevents the target from regenerating magicka while sleeping for the duration of the effect.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": false,
+                        "hasDuration": false,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 10,
+            "name": "Blessed Word",
+            "fType": 2,
+            "cost": 10,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Turn Undead",
+                        "school": 2,
+                        "description": "Temporarily increases an undead creature's flee rating (its inclination to run from an attacker). The effect's magnitude is the value increase to the flee rating.",
+                        "baseCost": 0.20000000298023225,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 10,
+            "name": "Blessed Touch",
+            "fType": 2,
+            "cost": 5,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 1,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Turn Undead",
+                        "school": 2,
+                        "description": "Temporarily increases an undead creature's flee rating (its inclination to run from an attacker). The effect's magnitude is the value increase to the flee rating.",
+                        "baseCost": 0.20000000298023225,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 10,
+            "name": "Mara's Gift",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 100,
+                    "maxMag": 100,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Restore Health",
+                        "school": 6,
+                        "description": "Restores the subject's Health if it has been affected by magical or normal attack. The magnitude is the units of health restored for each second of the spell's duration.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 11,
+            "name": "Mooncalf",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 4,
+                    "spellEffectData": {
+                        "name": "Fortify Attribute",
+                        "school": 6,
+                        "description": "Temporarily increases the value of one of a subject's Attributes. Any derived attributes are recalculated. Attributes return to their original values when the spell ends. The magnitude is the value of the increase of the attribute.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": true
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 11,
+            "name": "Lover's Kiss",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 2,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Paralyze",
+                        "school": 4,
+                        "description": "Renders the target unable to move. This effect has no magnitude, only duration.",
+                        "baseCost": 40.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Damage Fatigue",
+                        "school": 3,
+                        "description": "Lowers the value of a victim's Fatigue. Fatigue does not return to its original value at the end of the spell's duration; it restores normally, or may be restored with a restore fatigue spell or potion. The magnitude is the units of fatigue lost each second of the spell's duration.",
+                        "baseCost": 4.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 12,
+            "name": "Moonshadow",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Invisibility",
+                        "school": 4,
+                        "description": "Conceals the presence of the subject from observers. If the subject attacks, speaks, or activates an object, the effect is dispelled. The magnitude of this effect is not variable; the subject is always 100% invisible.",
+                        "baseCost": 20.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 13,
+            "name": "Beggar's Nose",
+            "fType": 2,
+            "cost": 5,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Detect Animal",
+                        "school": 5,
+                        "description": "Allows the caster of this effect to detect any entity animated by a spirit; said entities appear on the map as red-circle symbols. This effect includes all classes of monsters (creatures, undead, Daedra, Dwemer constructs). Humanoids are NOT detected by this spell. The magnitude is the range in feet from the caster that animals are detected.",
+                        "baseCost": 0.75,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Detect Key",
+                        "school": 5,
+                        "description": "Allows the caster of this effect to detect Keys; their locations appear on the map as green-circle symbols. The effect's magnitude is the range in feet from the caster that keys are detected.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                },
+                {
+                    "minMag": 200,
+                    "maxMag": 200,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Detect Enchantment",
+                        "school": 5,
+                        "description": "Allows the caster of this effect to detect enchanted items; said items appear on the map as blue-circle symbols. The effect's magnitude is the range in feet from the caster that enchanted items are detected.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 2,
+            "qualifier": 13,
+            "name": "Tower Key",
+            "fType": 1,
+            "cost": 0,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 50,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 1,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Open",
+                        "school": 1,
+                        "description": "Opens a locked container or door. The effect's magnitude is the highest lock level that can be opened.",
+                        "baseCost": 6.0,
+                        "hasMagnitude": true,
+                        "hasDuration": false,
+                        "restriction": 2,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 1,
+            "qualifier": 9,
+            "name": "Resist Magicka",
+            "fType": 0,
+            "cost": 0,
+            "isConstant": true,
+            "effDataList": [
+                {
+                    "minMag": 25,
+                    "maxMag": 25,
+                    "duration": 0,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Resist Magicka",
+                        "school": 6,
+                        "description": "Increases the target's resistance to damage from magicka attacks not based on elemental forces. The magnitude is the percentage of reduction in damage caused by non-elemental magic attacks.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Chameleon",
+            "fType": 2,
+            "cost": 15,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 10,
+                    "maxMag": 10,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Chameleon",
+                        "school": 4,
+                        "description": "Allows the target to blend into the surroundings and remain unseen. The target can attack and use objects without disrupting the effect. The spell ranges from 1% to 100% effectiveness, the magnitude being equal to the degree of concealment.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Bound Dagger",
+            "fType": 2,
+            "cost": 6,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Bound Dagger",
+                        "school": 2,
+                        "description": "Conjures a lesser-Daedra bound in the form of a magical, wondrously light Daedric dagger. The dagger appears automatically equipped on the caster, displacing any currently equipped weapon to the inventory. When the effect ends, the dagger disappears, and any previously equipped weapon is automatically re-equipped.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Summon Ancestral Ghost",
+            "fType": 2,
+            "cost": 21,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Summon Ancestral Ghost",
+                        "school": 2,
+                        "description": "Summons an Ancestral Ghost to battle for the caster. It appears six feet in front of the caster and attacks any aggressive entity until the effect ends or the creature is killed. At death, or when the effect ends, the creature disappears. If summoned in town, guards will attack the caster and summoned creature on sight.",
+                        "baseCost": 7.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Shield",
+            "fType": 2,
+            "cost": 15,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 5,
+                    "maxMag": 5,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Shield",
+                        "school": 1,
+                        "description": "Creates a magical shield around the subject's entire body. The spell adds its magnitude to the subject's Armor Rating.",
+                        "baseCost": 2.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Water Walking",
+            "fType": 2,
+            "cost": 9,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 0,
+                    "maxMag": 0,
+                    "duration": 60,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Water Walking",
+                        "school": 1,
+                        "description": "Permits the subject to walk on the surface of any body of water for the duration of the spell.",
+                        "baseCost": 3.0,
+                        "hasMagnitude": false,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Fire Bite",
+            "fType": 2,
+            "cost": 6,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 15,
+                    "maxMag": 30,
+                    "duration": 1,
+                    "area": 0,
+                    "effectRange": 1,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Fire Damage",
+                        "school": 3,
+                        "description": "Produces a manifestation of elemental fire. Upon contact with an object, this manifestation explodes, causing damage.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Detect Creature",
+            "fType": 2,
+            "cost": 19,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 50,
+                    "maxMag": 100,
+                    "duration": 5,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Detect Animal",
+                        "school": 5,
+                        "description": "Allows the caster of this effect to detect any entity animated by a spirit; said entities appear on the map as red-circle symbols. This effect includes all classes of monsters (creatures, undead, Daedra, Dwemer constructs). Humanoids are NOT detected by this spell. The magnitude is the range in feet from the caster that animals are detected.",
+                        "baseCost": 0.75,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 1,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Hearth Heal",
+            "fType": 2,
+            "cost": 13,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 20,
+                    "maxMag": 80,
+                    "duration": 1,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Restore Health",
+                        "school": 6,
+                        "description": "Restores the subject's Health if it has been affected by magical or normal attack. The magnitude is the units of health restored for each second of the spell's duration.",
+                        "baseCost": 5.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        },
+        {
+            "fFile": 0,
+            "qualifier": 0,
+            "name": "Sanctuary",
+            "fType": 2,
+            "cost": 15,
+            "isConstant": false,
+            "effDataList": [
+                {
+                    "minMag": 10,
+                    "maxMag": 10,
+                    "duration": 30,
+                    "area": 0,
+                    "effectRange": 0,
+                    "qualifier": 0,
+                    "spellEffectData": {
+                        "name": "Sanctuary",
+                        "school": 4,
+                        "description": "Causes the target to be harder to hit. The magnitude is the value that is added to the target's chance to dodge attacks.",
+                        "baseCost": 1.0,
+                        "hasMagnitude": true,
+                        "hasDuration": true,
+                        "restriction": 0,
+                        "hasQualifier": false
+                    }
+                }
+            ]
+        }
+    ]
+}

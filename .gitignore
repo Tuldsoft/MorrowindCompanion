@@ -361,3 +361,18 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Assets/Fonts
+/Assets/Resources/Icons
+/Assets/Resources/Prefabs
+/Assets/Scenes
+/Assets/TextMesh Pro
+/Builds
+/hooks
+/lfs/objects
+/Library
+/ProjectSettings
+/Temp
+/UserSettings
+/Assembly-CSharp.csproj
+/MorrowindClass.sln
+/Assets/Resources/UI
