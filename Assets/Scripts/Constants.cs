@@ -31,9 +31,17 @@ public class Constants
         public const int MaxArea = 50;
     }
 
+    public class Character
+    {
+        public const string FileExtension = ".chr";
+    }
+
+
     public class Class
     {
         public const string CustomKey = "custom";
+        public const string NoneKey = "none";
+        public const string FileExtension = ".cls";
     }
 
 }

@@ -26,8 +26,14 @@ public static class Data
     public static Dictionary<string, MWClass> Classes { get; set; }
         = new Dictionary<string, MWClass>();
 
+    public static List<string> UserClassKeys { get; set; }
+        = new List<string>();
+
     public static Dictionary<string, SpellEffect> SpellEffects { get; set; }
             = new Dictionary<string, SpellEffect>();
+
+    public static List<Character.CharBasicData> UserCharacters { get; set; }
+        = new List<Character.CharBasicData>();
 
     public static class Sprites
     {
@@ -52,6 +58,8 @@ public static class Data
         public static GameObject EffectTemplate { get; set; } = null;
         public static GameObject ViewFeaturesMenu { get; set; } = null;
         public static GameObject ViewFeaturesPanel { get; set; } = null;
+        public static GameObject ManageClassesMenu { get; set; } = null;
+        public static GameObject SaveLoadCharMenu { get; set; } = null;
     }
 
     // Index-matched lists, private set to control add/remove

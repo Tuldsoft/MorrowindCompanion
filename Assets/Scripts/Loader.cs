@@ -41,6 +41,8 @@ public static class Loader
 
         foreach (string mwClass in Data.Classes.Keys)
         {
+            if (Data.UserClassKeys.Contains(mwClass)) continue;
+
             string path = @"Icons\MW-class-" + mwClass;
             Sprite sprite = Resources.Load<Sprite>(path);
             if (sprite == null)
@@ -78,6 +80,10 @@ public static class Loader
             @"Prefabs\ViewFeaturesMenu");
         Data.Prefabs.ViewFeaturesPanel = Resources.Load<GameObject>(
             @"Prefabs\ViewFeaturesPanel");
+        Data.Prefabs.ManageClassesMenu = Resources.Load<GameObject>(
+            @"Prefabs\ManageClassesMenu");
+        Data.Prefabs.SaveLoadCharMenu = Resources.Load<GameObject>(
+            @"Prefabs\SaveLoadCharMenu");
     }
 
 }

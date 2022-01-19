@@ -40,7 +40,7 @@ public enum SpecName { Combat, Magic, Stealth }
 [System.Serializable]
 public class Skill : ISaveObject
 {
-    string ISaveObject.FileName { get; } = "Skills.json";
+    //string ISaveObject.FileName { get; } = "Skills.json";
 
     public SkillName name;
     public string displayName;

@@ -8,8 +8,10 @@ using UnityEngine.UI;
 
 public class ClassBox : MonoBehaviour
 {
-    [SerializeField]
-    MainMonitor monitor = null;
+    //[SerializeField]
+    //MainMonitor monitor = null;
+
+    Action monitorRefresh;
 
     [SerializeField]
     TMP_Text specText = null;
@@ -52,16 +54,40 @@ public class ClassBox : MonoBehaviour
 
 
     // properties
-    string mwClassKey =>
+    string mwClassKey => character.MWClass == null
+        ? Constants.Class.NoneKey : character.MWClass.KeyName;
+    /*(classDd.value == 1 && Data.Classes.ContainsKey(Constants.Class.CustomKey)) ?
+        Constants.Class.CustomKey : classDd.captionText.text;
+*/
+
+    string GetKeyFromClassDd() =>
         (classDd.value == 1 && Data.Classes.ContainsKey(Constants.Class.CustomKey)) ?
             Constants.Class.CustomKey : classDd.captionText.text;
 
+    // checks status for updating interactable of SaveClassButton
+    public bool IsSaveable
+    {
+        get
+        {
+            MWClass mwClass = character.MWClass;
+            if (mwClass == null || mwClass.isStandard)
+                return false;
+            else if (!isStandardMode)
+                return false;
+            else if (mwClass.KeyName != Constants.Class.CustomKey)
+                return false;
+            else if (!MWClass.ValidateNewName(mwClass))
+                return false;
+            else return true;
+        }
+    }
 
 
     // run once by main monitor to create objects in the box
-    public void PopulateClassBox(Character character)
+    public void PopulateClassBox(Character character, Action refresh)
     {
         this.character = character;
+        monitorRefresh = refresh;
         
         standardObjs.AddRange( new List<GameObject> { classDd.gameObject,
             specText.gameObject, keyAttrObjs[0].gameObject, keyAttrObjs[1].gameObject});
@@ -71,11 +97,11 @@ public class ClassBox : MonoBehaviour
 
         classInput.onEndEdit.AddListener(delegate (string x) {
             Data.Classes[Constants.Class.CustomKey].SetName(x);
-            monitor.Refresh(); });
+            monitorRefresh(); });
 
         classDd.onValueChanged.AddListener(delegate {
-            character.SetClass(mwClassKey);
-            monitor.Refresh();
+            character.SetClass(GetKeyFromClassDd());
+            monitorRefresh();
         });
 
         PopulateClassDd();
@@ -84,7 +110,7 @@ public class ClassBox : MonoBehaviour
         specDd.onValueChanged.AddListener(delegate (int x)
         {
             Data.Classes[Constants.Class.CustomKey].SetSpec((SpecName)x);
-            monitor.Refresh();
+            monitorRefresh();
         });
 
         keyAttrDd0.onValueChanged.AddListener(delegate (int x)
@@ -93,7 +119,7 @@ public class ClassBox : MonoBehaviour
                 Data.Classes[Constants.Class.CustomKey].KeyAttrSwap();
             else
                 Data.Classes[Constants.Class.CustomKey].SetKeyAttr(0, (AttrName)(x + 1));
-            monitor.Refresh();
+            monitorRefresh();
         });
 
         keyAttrDd1.onValueChanged.AddListener(delegate (int x)
@@ -102,7 +128,7 @@ public class ClassBox : MonoBehaviour
                 Data.Classes[Constants.Class.CustomKey].KeyAttrSwap();
             else
                 Data.Classes[Constants.Class.CustomKey].SetKeyAttr(0, (AttrName)(x + 1));
-            monitor.Refresh();
+            monitorRefresh();
         });
 
 
@@ -144,31 +170,56 @@ public class ClassBox : MonoBehaviour
 
     }
 
-    void PopulateClassDd(string classKey = "none")
+    // populated at start, repopulated when "Customize" is clicked
+    void PopulateClassDd()
     {
         classDd.ClearOptions();
-        classDd.AddOptions(new List<string> { "none" });
+        classDd.AddOptions(new List<string> { "none" });               // 0 none
         if (Data.Classes.ContainsKey(Constants.Class.CustomKey))
             classDd.AddOptions(new List<string> { 
-                Data.Classes[Constants.Class.CustomKey].DisplayName });
-        classDd.AddOptions(Data.Classes.Values
-            .Where(x => x.isStandard)
+                Data.Classes[Constants.Class.CustomKey].DisplayName }); // 1 custom
+
+        /*Debug.Log("Adding user classes: \n" + String.Join(",\n",
+            Data.Classes.Values
+            .Where(x => x.isStandard
+                && Data.UserClassKeys.Contains(x.KeyName))
             .Select(x => x.DisplayName)
+            .ToList()));*/
+
+        // user-defined "standard" classes from files
+        classDd.AddOptions(Data.Classes.Values
+            .Where(x => x.isStandard
+                && Data.UserClassKeys.Contains(x.KeyName))
+            .Select(x => x.DisplayName)
+            .OrderBy(x => x)
+            .ToList());
+
+        // in-game standard classes
+        classDd.AddOptions(Data.Classes.Values
+            .Where(x => x.isStandard
+                && !Data.UserClassKeys.Contains(x.KeyName))
+            .Select(x => x.DisplayName)
+            .OrderBy(x => x)
             .ToList());
 
         // reselect
-        if (classKey == Constants.Class.CustomKey)
-            classDd.value = 1;
+        if (mwClassKey == Constants.Class.NoneKey)
+            classDd.SetValueWithoutNotify(0);
+        else if (mwClassKey == Constants.Class.CustomKey)
+            classDd.SetValueWithoutNotify(1);
+            //classDd.value = 1;
         else
         {
             int index = classDd.options
                 .Select(x => x.text)
                 .ToList()
-                .IndexOf(classKey);
+                .IndexOf(mwClassKey);
             if (index < 1)
-                classDd.value = 0;
+                classDd.SetValueWithoutNotify(0);
+                //classDd.value = 0;
             else
-                classDd.value = index;
+                classDd.SetValueWithoutNotify(index);
+                //classDd.value = index;
         }
     }
 
@@ -233,14 +284,16 @@ public class ClassBox : MonoBehaviour
     {
         MWClass mwClass = character.MWClass;
 
+        PopulateClassDd();
+
         // if "none"
-        if (character.MWClass == null)
+        if (mwClass == null)
             HideAll(); // everything off
         else
         {
             Show(isStandardMode);
 
-            classInput.text = character.MWClass.DisplayName;
+            classInput.text = mwClass.DisplayName;
 
             // set spec and key attributes
             specText.text = mwClass.Specialization.ToString();
@@ -274,17 +327,18 @@ public class ClassBox : MonoBehaviour
             Data.Classes[Constants.Class.CustomKey]
                 = MWClass.CopyToCustom(character.MWClass);
             
-            PopulateClassDd(Constants.Class.CustomKey);
+            character.SetClass(Constants.Class.CustomKey);
+            //PopulateClassDd(Constants.Class.CustomKey); // done in Refresh()
         }
         else
         {
-            PopulateClassDd(mwClassKey);
+            //PopulateClassDd(mwClassKey);  // done in Refresh()
         }
 
         // enable and disable things
-        Show(isStandardMode);
+        //Show(isStandardMode); //now handled in refresh()
 
-        monitor.Refresh();
+        monitorRefresh();
     }
 
     // show or hide the Misc skills panel, only available for custom classes
@@ -310,9 +364,10 @@ public class ClassBox : MonoBehaviour
         if (oldSkillSlot != skillSlot)
         {
             customClass.SkillSwap(oldSkillSlot, skillSlot);
-            monitor.Refresh();
+            monitorRefresh();
         }
     }
 
+    
 
 }

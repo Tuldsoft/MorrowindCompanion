@@ -17,10 +17,12 @@ public static class Initializer
         Skill.Initialize();       // populates Data.Skills from csv
         Race.Initialize();        // populates Data.Races from csv
         MWClass.Initialize();     // populates Data.Classes from csv
+                                  //   and Data.UserClasses from serial files
         Sign.Initialize();        // populates Data.Signs from csv
         SpellEffect.Initialize(); // populates Data.SpellEffects from csv
         Feature.Initialize();     // populates Data.Features from json
         Loader.Initialize();      // populates Data.Sprites and Data.Prefabs
+        Character.Initialize();   // populates Data.UserCharacters from serial files
     }
 
 }

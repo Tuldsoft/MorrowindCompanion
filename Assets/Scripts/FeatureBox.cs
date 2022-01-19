@@ -138,7 +138,7 @@ public class FeatureBox : MonoBehaviour
         
         // Features
         List<Feature> features = new List<Feature>();
-        if (character.Race != null)
+        if (character.Race != null && character.Gender != Gender.none)
             features.AddRange(character.Race.Features);
         if (character.Sign != null)
             features.AddRange(character.Sign.Features);

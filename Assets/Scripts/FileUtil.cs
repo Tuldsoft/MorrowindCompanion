@@ -11,29 +11,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // For reading and writing various file types (csv, json)
-// TODO: Replace json with binary serialization
+
+/// <TODO>
+/// TODO: CSVs and features json can initially be stored in Resources. Upon Init, they
+/// will be checked for in the persistantDataPath, and copied from Resources to there
+/// if they do not yet exist. Once they exist in persistentDataPath, load from there (if
+/// valid).
+/// </TODO>
+
+/// <TODO>
+/// Characters and custom classes should be saved and loaded by the user using 
+/// serialized binary in persistentDataPath/Data/. 
+/// </TODO>
+
+
 public static class FileUtil
 {
 
-    //public static string localDirectory = "/Data/";
-    //public static string directory = Application.persistentDataPath + localDirectory;
-    public static string directory = Application.streamingAssetsPath;
+    public static string localDirectory = "/Data/";
+    public static string persistentDirectory = Application.persistentDataPath + localDirectory;
+    public static string streamingDirectory = Application.streamingAssetsPath;
 
     // Write a list of IJsonable to disk as a json file
     public static void WriteJson<T>(List<T> saveObjects, string fileName) where T : IJsonable
     {
-        if (!Directory.Exists(directory))
-            Directory.CreateDirectory(directory);
+        if (!Directory.Exists(streamingDirectory))
+            Directory.CreateDirectory(streamingDirectory);
 
         string json = JsonHelper.ToJson(saveObjects.ToArray(), true);
-        File.WriteAllText(directory + fileName, json);
+        File.WriteAllText(persistentDirectory + fileName, json);
     }
 
     // Create an array of IJsonable from a json file on disk
     public static T[] ReadJson<T> (string fileName) where T: IJsonable
     {
         //string fullPath = directory + fileName;
-        string fullPath = Path.Combine(directory, fileName);
+        string fullPath = Path.Combine(streamingDirectory, fileName);
 
         if (File.Exists(fullPath))
         {
@@ -140,6 +153,80 @@ public static class FileUtil
 
         return outputList.ToArray();
     }
+
+    public static List<T> LoadBSOsFromFiles<T> (string extension) where T : IBinarySaveObject
+    {
+        List<T> saveObjects = new List<T>();
+
+        try
+        {
+            var filePaths = Directory.EnumerateFiles(persistentDirectory, "*" + extension,
+                SearchOption.AllDirectories);
+
+            /*foreach (var filePath in filePaths)
+                Debug.Log(filePath.Substring(persistentDirectory.Length) + " found");*/
+
+            //Debug.Log(filePaths.Count() + " files found");
+                        
+            foreach (var filePath in filePaths)
+            {
+                string fileName = filePath.Substring(persistentDirectory.Length);
+
+                try
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    FileStream file = File.Open(filePath, FileMode.Open);
+
+                    saveObjects.Add((T)bf.Deserialize(file));
+                    file.Close();
+                }
+                catch (SerializationException)
+                {
+                    Debug.Log("Error loading " + fileName);
+                }
+            }
+
+            return saveObjects;
+
+        }
+        catch (UnauthorizedAccessException uAEx)
+        {
+            Console.WriteLine(uAEx.Message);
+        }
+        catch (PathTooLongException pathEx)
+        {
+            Console.WriteLine(pathEx.Message);
+        }
+
+        return null;
+    }
+
+    public static void SaveBSOToFile<T>(T saveObject) where T : IBinarySaveObject
+    {
+        if (!Directory.Exists(persistentDirectory))
+            Directory.CreateDirectory(persistentDirectory);
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(persistentDirectory + saveObject.GetFileName());
+        bf.Serialize(file, saveObject);
+        file.Close();
+
+    }
+
+    public static void DeleteFile(string fileName)
+    {
+        try
+        {
+            File.Delete(Path.Combine(persistentDirectory, fileName));
+        }
+        catch (IOException ioExcept)
+        {
+            Console.WriteLine(ioExcept.Message);
+        }
+
+    }
+
+
 
 }
 

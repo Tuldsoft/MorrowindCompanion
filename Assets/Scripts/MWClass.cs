@@ -7,9 +7,10 @@ using UnityEngine;
 // Stores info for a class, uses ISaveObject to load info from CSV into Data
 public class MWClass : ISaveObject
 {
-    string ISaveObject.FileName { get; } = "MWClasses.json";
 
-    // private backing fields
+    //string IJsonable.FileName { get; } = "CustomClass.json";
+
+    // private backing fields, serializable
     private string name;
     private string description;
     private SpecName specialization;
@@ -71,7 +72,7 @@ public class MWClass : ISaveObject
         if (isInitialized) return;
         isInitialized = true;
 
-        // read CSV, if returns false, then create a single default race
+        // read CSV, if returns false, then create a single default class
         if (!FileUtil.ReadCSV<MWClass>(Constants.FileName.Classes))
         {
             Debug.LogError("Error while reading csv.");
@@ -79,23 +80,22 @@ public class MWClass : ISaveObject
             MWClass mwClass = DefaultNew();
             Data.Classes.Add(mwClass.KeyName, mwClass);
         }
+
+        // read user-created files
+        var saveObjects = FileUtil.LoadBSOsFromFiles<MWClass.MWClassData>(
+            Constants.Class.FileExtension);
+
+        foreach (var saveObject in saveObjects)
+        {
+            MWClass mwClass = new MWClass();
+            mwClass.UnpackData(saveObject);
+            Data.Classes.Add(mwClass.KeyName, mwClass);
+            Data.UserClassKeys.Add(mwClass.KeyName);
+            Debug.Log(mwClass + " loaded.");
+        }
+
     }
 
-
-    // relocate these to Character
-    /*protected Gender gender;
-    protected RaceName race;
-    protected SignName sign;
-
-    protected int level;
-    protected int[,] attrIncreases 
-        = new int[Enum.GetNames(typeof (AttrName)).Length - 1, Constants.MaxNumLevels];
-    protected int[,] skillIncreases 
-        = new int[Enum.GetNames(typeof (SkillName)).Length - 1, Constants.MaxNumLevels];*/
-
-    // ISaveObject implementation, for building MWClasses from CSV and storing in Data
-
-    // sets string values from CSV to fields, and registers it in Data
     // returns false if fails
     public bool SetValues(string[] values)
     {
@@ -244,6 +244,21 @@ public class MWClass : ISaveObject
         return newClass;
     }
 
+    public static bool ConvertToStandard(ref MWClass mwClass)
+    {
+        if (!ValidateNewName(mwClass)) return false;
+        
+        mwClass.isStandard = true;
+        Data.Classes.Add(mwClass.KeyName, mwClass);
+        Data.UserClassKeys.Add(mwClass.KeyName);
+
+        return true;
+    }
+
+    // returns true is new name is valid
+    public static bool ValidateNewName(MWClass mwClass) =>
+        !Data.Classes.ContainsKey(mwClass.name);
+
     // non-static string helper functions
     public string GetMiscAsString()
     {
@@ -272,6 +287,8 @@ public class MWClass : ISaveObject
         return output.ToString();
     }
 
+    public override string ToString() => DisplayName;
+
     public void KeyAttrSwap()
     {
         AttrName temp = keyAttributes[0];
@@ -285,15 +302,79 @@ public class MWClass : ISaveObject
         skills[first] = skills[second];
         skills[second] = temp;
     }
+
+    // public storage container for IJsonable
+    [System.Serializable]
+    public class MWClassData : IJsonable, IBinarySaveObject
+    {
+        // Marks as IJsonable, but is not used.
+        string IJsonable.FileName { get; } = "SomeClass.json";
+
+        // Implements IBinarySaveObject template
+        string IBinarySaveObject.GetFileName() => name + Constants.Class.FileExtension;
+
+        /*IBinarySaveObject IBinarySaveObject.PackData(object container)
+        {
+            if (!(container is MWClass mwClass)) return null;
+
+            return new MWClassData
+            {
+                name = mwClass.name,
+                description = mwClass.description,
+                specialization = mwClass.specialization,
+                keyAttributes = mwClass.keyAttributes,
+                skills = mwClass.skills,
+                isStandard = mwClass.isStandard
+            };
+        }
+
+        void IBinarySaveObject.UnpackData(IBinarySaveObject so, ref object container)
+        {
+
+            if (!(so is MWClassData data)
+                || !(container is MWClass mwclass)) return;
+
+            mwclass.name = data.name;
+            mwclass.description = data.description;
+            mwclass.specialization = data.specialization;
+            mwclass.keyAttributes = data.keyAttributes;
+            mwclass.skills = data.skills;
+            mwclass.isStandard = data.isStandard;
+
+        }*/
+
+        public string name;
+        public string description;
+        public SpecName specialization;
+        public AttrName[] keyAttributes;
+        public SkillName[] skills;
+
+        public bool isStandard = true;
+    }
+
+    public MWClassData PackData()
+    {
+        return new MWClassData
+        {
+            name = name,
+            description = description,
+            specialization = specialization,
+            keyAttributes = keyAttributes,
+            skills = skills,
+            isStandard = isStandard
+        };
+    }
+
+    public void UnpackData(MWClassData data)
+    {
+        name = data.name;
+        description = data.description;
+        specialization = data.specialization;
+        keyAttributes = data.keyAttributes;
+        skills = data.skills;
+        isStandard = data.isStandard;
+    }
+
 }
 
-/*public class MWClass : MWClassData
-{
-    // relocate these to Character
-    *//*public Gender Gender => gender;
-    public RaceName Race => race;
-    public SignName Sign => sign;
-    public int Level => level;
-    public int[,] AttrIncreases => attrIncreases;
-    public int[,] SkillIncreases => skillIncreases;*//*
-}*/
+

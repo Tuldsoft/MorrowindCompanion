@@ -33,7 +33,7 @@ public enum ResistType
 
 public class Race : ISaveObject
 {
-    string ISaveObject.FileName { get; } = "Races.json";
+    //string ISaveObject.FileName { get; } = "Races.json";
 
     // private backing fields (Enum.TryParse(.. out field))
     private RaceName name; // used as out parameter in TryParse, cannot use auto-properties

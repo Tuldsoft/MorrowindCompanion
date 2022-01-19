@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ public class SignBox : MonoBehaviour
 
     Character character;
 
-    public void PopulateSignBox(Character character)
+    public void PopulateSignBox(Character character, Action refresh)
     {
         this.character = character;
 
@@ -23,12 +24,20 @@ public class SignBox : MonoBehaviour
         signDropdown.AddOptions(new List<string> { SignName.none.ToString() });
         signDropdown.AddOptions(Data.Signs.Keys
             .Select(x => Data.Signs[x].DisplayName).ToList());
+
+        signDropdown.onValueChanged.AddListener(delegate (int value)
+        {
+            character.SetSign((SignName)value);
+            refresh();
+        });
     }
 
     public void RefreshSignBox()
     {
-        SignName sign = (SignName)signDropdown.value;
-        character.SetSign(sign);
+        /*SignName sign = (SignName)signDropdown.value;
+        character.SetSign(sign);*/
+
+        signDropdown.SetValueWithoutNotify((int)character.SignName);
 
         featureBox.RefreshSignFeatureBox(character);
     }

@@ -24,7 +24,7 @@ public enum SignName
 }
 public class Sign : ISaveObject
 {
-    string ISaveObject.FileName { get; } = "Signs.json";
+    //string ISaveObject.FileName { get; } = "Signs.json";
 
     // backing fields, because properties cannot be used as out parameters
     SignName name = SignName.none;

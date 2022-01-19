@@ -2,7 +2,10 @@ using System.Text;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class MainMonitor : MonoBehaviour
@@ -10,14 +13,18 @@ public class MainMonitor : MonoBehaviour
     static MainMonitor mainMonitor = null;
 
     Character activeCharacter = new Character();
+    Character GetActiveCharacter() => activeCharacter;
+    void SetActiveCharacter(Character.CharBasicData charData) =>
+        activeCharacter.UnpackData(charData);
 
     [SerializeField]
-    TMP_Text signDetailsText = null,
-        outputText = null;
+    TMP_InputField nameInput = null;
 
     [SerializeField]
-    TMP_Dropdown genderDropdown = null,
-        signDropdown = null;
+    TMP_Text outputText = null;
+
+    [SerializeField]
+    TMP_Dropdown genderDropdown = null;
 
     [SerializeField]
     RaceBox raceBox = null;
@@ -40,6 +47,12 @@ public class MainMonitor : MonoBehaviour
     [SerializeField]
     AttrSlider healthSlider = null, magickaSlider = null, fatigueSlider = null;
 
+    [SerializeField]
+    Button resetButton = null, 
+        saveCharButton = null, loadCharButton = null,
+        saveClassButton = null, manageClassButton = null,
+        levelTrackerButton = null, factionButton = null, spellCraftButton = null;
+
     bool isRefreshing = false;
 
     private void Awake()
@@ -59,6 +72,30 @@ public class MainMonitor : MonoBehaviour
         /*foreach (KeyValuePair<string, MWClass> pair in Data.Classes)
             Debug.Log(pair.Key + " registered successfully");*/
 
+        nameInput.onEndEdit.AddListener(
+            delegate (string x) {
+                activeCharacter.SetName(x);
+                Refresh(); });
+
+        genderDropdown.onValueChanged.AddListener(
+            delegate (int value) { 
+                activeCharacter.SetGender((Gender)value); 
+                Refresh(); });
+
+        resetButton.onClick.AddListener(delegate ()
+        {
+            Reset_Click();
+            Refresh();
+        });
+
+        saveCharButton.onClick.AddListener(SaveChar_Click);
+        loadCharButton.onClick.AddListener(LoadChar_Click);
+        saveClassButton.onClick.AddListener(SaveClass_Click);
+        manageClassButton.onClick.AddListener(ManageClasses_Click);
+        //level tracker
+        //faction viewer
+        //spell crafter
+
         PopulateRaceBox();
         PopulateClassBox();
         PopulateSignBox();
@@ -66,6 +103,8 @@ public class MainMonitor : MonoBehaviour
         PopulateSkillBox();
 
         Refresh();
+
+        //TestArea();
 
     }
 
@@ -75,7 +114,10 @@ public class MainMonitor : MonoBehaviour
         if (isRefreshing) return;
         isRefreshing = true;
 
-        activeCharacter.Gender = (Gender)genderDropdown.value;
+        nameInput.SetTextWithoutNotify(activeCharacter.Name);
+        genderDropdown.SetValueWithoutNotify((int)activeCharacter.Gender);
+
+        //activeCharacter.Gender = (Gender)genderDropdown.value;
         RefreshRaceBox();
         RefreshClassBox();
         RefreshSignBox();
@@ -84,17 +126,18 @@ public class MainMonitor : MonoBehaviour
         RefreshDerivedAttrBox(); // TODO: Remove DerivedAttrBox from MainMonitor
         RefreshFeatureBox();
 
+        ActivateButtons();
         RefreshOutput(); // for debugging
 
         isRefreshing = false;
     }
 
     // RaceBox
-    void PopulateRaceBox() => raceBox.PopulateRaceBox(activeCharacter);
+    void PopulateRaceBox() => raceBox.PopulateRaceBox(activeCharacter, Refresh);
     void RefreshRaceBox() => raceBox.RefreshRaceBox();
 
     // SignBox
-    void PopulateSignBox() => signBox.PopulateSignBox(activeCharacter);
+    void PopulateSignBox() => signBox.PopulateSignBox(activeCharacter, Refresh);
     void RefreshSignBox() => signBox.RefreshSignBox();
 
 
@@ -159,7 +202,7 @@ public class MainMonitor : MonoBehaviour
     void RefreshSkillBox() => skillBox.RefreshSkillBox(activeCharacter.GetSkills());
 
     // ClassBox
-    void PopulateClassBox() => classBox.PopulateClassBox(activeCharacter);
+    void PopulateClassBox() => classBox.PopulateClassBox(activeCharacter, Refresh);
     void RefreshClassBox() => classBox.RefreshClassBox();
 
     // DerivedAttrBox (Health, Magicka, etc)
@@ -172,4 +215,78 @@ public class MainMonitor : MonoBehaviour
 
     // FeatureBox
     void RefreshFeatureBox() => featureBox.RefreshFeatureBox(activeCharacter);
+
+    void ActivateButtons()
+    {
+        resetButton.interactable = activeCharacter.IsResetable;
+        saveCharButton.interactable = activeCharacter.IsSaveable;
+        loadCharButton.interactable = Data.UserCharacters.Any();
+
+        saveClassButton.interactable = classBox.IsSaveable;
+        manageClassButton.interactable = Data.UserClassKeys.Any();
+
+        levelTrackerButton.interactable = false;
+        factionButton.interactable = false;
+        spellCraftButton.interactable = false;
+    }
+
+    void Reset_Click() => activeCharacter.Reset();
+
+    void SaveChar_Click()
+    {
+        GameObject gObj = Instantiate(Data.Prefabs.SaveLoadCharMenu, gameObject.transform);
+        gObj.GetComponent<SaveLoadCharMonitor>()
+            .SetSaveMonitor(GetActiveCharacter, SetActiveCharacter, Refresh);
+    }
+
+    void LoadChar_Click()
+    {
+        GameObject gObj = Instantiate(Data.Prefabs.SaveLoadCharMenu, gameObject.transform);
+        gObj.GetComponent<SaveLoadCharMonitor>().SetLoadMonitor(SetActiveCharacter, Refresh);
+    }
+
+
+    void SaveClass_Click()
+    {
+        // should only be interactable if saveable, but double check anyway
+        
+        MWClass mwClass = activeCharacter.MWClass;
+        if (!classBox.IsSaveable) return;
+
+        // Attempt to convert to standard by checking name
+        if (!MWClass.ConvertToStandard(ref mwClass)) return;
+
+        /*FileUtil.WriteJson<MWClass.MWClassData>(
+            new List<MWClass.MWClassData> { mwClass.PackData() }, mwClass.KeyName + ".json");*/
+
+        Data.Classes.Remove(Constants.Class.CustomKey);
+        FileUtil.SaveBSOToFile<MWClass.MWClassData>(mwClass.PackData());
+        
+        activeCharacter.SetClass(mwClass.KeyName);
+        Refresh();
+    }
+
+    void ManageClasses_Click()
+    {
+        GameObject gObj = Instantiate(Data.Prefabs.ManageClassesMenu, gameObject.transform);
+        gObj.GetComponent<ManageClassesMonitor>().SetMonitor(Refresh);
+        //gObj.GetComponent<ManageClassesMonitor>().mainMonitor = this;
+    }
+
+    /*void TestArea()
+    {
+        var saveObjects = FileUtil.LoadBSOsFromFiles<MWClass.MWClassData>(
+            Constants.Class.FileExtension);
+
+        Debug.Log(saveObjects.Count + " class objects loaded successfully");
+
+        foreach (var saveObject in saveObjects)
+        {
+            MWClass mwClass = new MWClass();
+            mwClass.UnpackData(saveObject);
+            Debug.Log(mwClass + " loaded.");
+        }
+
+    }*/
+
 }
